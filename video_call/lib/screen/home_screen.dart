@@ -7,15 +7,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100]!,
-      body: SafeArea(
+      backgroundColor: Colors.blue[100]!,  //배경색 설정
+      body: SafeArea(  //레이아웃 설정
         child: Padding(
           padding: const EdgeInsets.all(0.0),
           child: Column(
-            children: [
-              Expanded(child: _Logo()),
-              Expanded(child: _Image()),
-              Expanded(child: _EntryButton()),
+            children: [  //레이아웃 나누기
+              Expanded(child: _Logo()),  //로고
+              Expanded(child: _Image()),  //이미지
+              Expanded(child: _EntryButton()),  //통화 시작 버튼
             ],
           ),
         ),
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-class _Logo extends StatelessWidget {
+class _Logo extends StatelessWidget {  //로고 설정
   const _Logo({Key? key}) :  super(key: key);
 
   @override
@@ -67,7 +67,7 @@ class _Logo extends StatelessWidget {
     );
   }
 }
-class _Image extends StatelessWidget {
+class _Image extends StatelessWidget {  //이미지 설정
   const _Image({Key? key}) : super(key: key);
 
   @override
@@ -79,7 +79,7 @@ class _Image extends StatelessWidget {
     );
   }
 }
-class _EntryButton extends StatelessWidget {
+class _EntryButton extends StatelessWidget {  //입장 버튼 설정
   const _EntryButton({Key? key}) : super(key: key);
 
   @override
@@ -90,8 +90,9 @@ class _EntryButton extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: (){
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => CamScreen(),
+            Navigator.of(context).push(  // push() => 다른 페이지로 이동
+              MaterialPageRoute(
+                builder: (_) => CamScreen(),
               ),
             );
           },
